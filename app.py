@@ -3,7 +3,7 @@ import random
 
 st.set_page_config(page_title="🏇 すごろく競馬", layout="wide")
 
-BOARD_SIZE = 20
+BOARD_SIZE = 30
 
 # -------------------------
 # 初期化
