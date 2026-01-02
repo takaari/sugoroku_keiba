@@ -1,7 +1,7 @@
 import streamlit as st
 import random
 
-st.set_page_config(page_title="🏇 すごろく競馬", layout="wide")
+st.set_page_config(page_title="🏇 sugoroku競馬", layout="wide")
 
 BOARD_SIZE = 30
 
