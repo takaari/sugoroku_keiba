@@ -1,9 +1,9 @@
 import streamlit as st
 import random
 
-st.set_page_config(page_title="🏇 sugoroku競馬", layout="wide")
+st.set_page_config(page_title="🏇 すごろく競馬", layout="wide")
 
-BOARD_SIZE = 19
+BOARD_SIZE = 20
 
 # -------------------------
 # 初期化
@@ -18,20 +18,6 @@ if "finished" not in st.session_state:
     st.session_state.finished = False
 
 st.title("🏇 すごろく競馬")
-
-# -------------------------
-# 盤面描画
-# -------------------------
-def draw_lane(pos, label):
-    lane = ["□"] * (BOARD_SIZE + 1)
-    lane[pos] = "🏇"
-    return f"{label} " + "".join(lane) + " 🏁"
-
-st.markdown("### レース状況")
-st.markdown(draw_lane(st.session_state.pos_a, "A"))
-st.markdown(draw_lane(st.session_state.pos_b, "B"))
-
-
 
 # -------------------------
 # サイコロ
@@ -64,4 +50,14 @@ if st.session_state.pos_b >= BOARD_SIZE:
     st.success("🏆 プレイヤーB 勝利！")
     st.session_state.finished = True
 
+# -------------------------
+# 盤面描画
+# -------------------------
+def draw_lane(pos, label):
+    lane = ["□"] * (BOARD_SIZE + 1)
+    lane[pos] = "🏇"
+    return f"{label} " + "".join(lane) + " 🏁"
 
+st.markdown("### レース状況")
+st.markdown(draw_lane(st.session_state.pos_a, "A"))
+st.markdown(draw_lane(st.session_state.pos_b, "B"))
