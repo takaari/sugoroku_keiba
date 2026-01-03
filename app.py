@@ -21,25 +21,6 @@ if "finished" not in st.session_state:
 
 st.title("🏇 すごろく競馬")
 
-# -------------------------
-# サイコロ
-# -------------------------
-if not st.session_state.finished:
-    if st.button("🎲 サイコロを振る"):
-        roll = random.randint(1, 6)
-
-        if st.session_state.turn == "A":
-            st.session_state.pos_a = min(
-                st.session_state.pos_a + roll, BOARD_SIZE
-            )
-            st.session_state.turn = "B"
-        else:
-            st.session_state.pos_b = min(
-                st.session_state.pos_b + roll, BOARD_SIZE
-            )
-            st.session_state.turn = "A"
-
-        st.info(f"出目：{roll}")
 
 
 # -------------------------
@@ -65,3 +46,22 @@ if st.session_state.pos_b >= BOARD_SIZE:
     st.success("🏆 プレイヤーB 勝利！")
     st.session_state.finished = True
 
+# -------------------------
+# サイコロ
+# -------------------------
+if not st.session_state.finished:
+    if st.button("🎲 サイコロを振る"):
+        roll = random.randint(1, 6)
+
+        if st.session_state.turn == "A":
+            st.session_state.pos_a = min(
+                st.session_state.pos_a + roll, BOARD_SIZE
+            )
+            st.session_state.turn = "B"
+        else:
+            st.session_state.pos_b = min(
+                st.session_state.pos_b + roll, BOARD_SIZE
+            )
+            st.session_state.turn = "A"
+
+        st.info(f"出目：{roll}")
