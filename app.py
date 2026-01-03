@@ -39,16 +39,6 @@ if not st.session_state.finished:
 
         st.info(f"出目：{roll}")
 
-# -------------------------
-# 勝敗判定
-# -------------------------
-if st.session_state.pos_a >= BOARD_SIZE:
-    st.success("🏆 プレイヤーA 勝利！")
-    st.session_state.finished = True
-
-if st.session_state.pos_b >= BOARD_SIZE:
-    st.success("🏆 プレイヤーB 勝利！")
-    st.session_state.finished = True
 
 # -------------------------
 # 盤面描画
@@ -61,3 +51,15 @@ def draw_lane(pos, label):
 st.markdown("### レース状況")
 st.markdown(draw_lane(st.session_state.pos_a, "A"))
 st.markdown(draw_lane(st.session_state.pos_b, "B"))
+
+# -------------------------
+# 勝敗判定
+# -------------------------
+if st.session_state.pos_a >= BOARD_SIZE:
+    st.success("🏆 プレイヤーA 勝利！")
+    st.session_state.finished = True
+
+if st.session_state.pos_b >= BOARD_SIZE:
+    st.success("🏆 プレイヤーB 勝利！")
+    st.session_state.finished = True
+
