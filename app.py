@@ -1,3 +1,6 @@
+st.write("🔥 更新テスト 2026-01-03 22:15")
+
+
 import streamlit as st
 import random
 
