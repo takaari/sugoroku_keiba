@@ -45,7 +45,7 @@ st.markdown("""
 }
 </style>
 """, unsafe_allow_html=True)
-BOARD_SIZE = 30
+BOARD_SIZE = 60
 
 # -------------------------
 # 初期化
@@ -101,7 +101,7 @@ if st.session_state.finished:
 # サイコロ
 # -------------------------
 dice = [1, 2, 3, 4, 5, 6]
-BOARD_SIZE = 30
+BOARD_SIZE = 60
 
 if not st.session_state.finished:
     if st.button("🎲 サイコロを振る（同時）"):
