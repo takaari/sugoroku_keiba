@@ -58,7 +58,7 @@ st.title("🏇 すごろく競馬")
 def draw_lane(pos, icon):
     lane = ["‗"] * (BOARD_SIZE + 1)
     lane[pos] = icon
-    return "".join(lane) + " 🏁"
+    return "".join(lane)
 
 lane_a = draw_lane(st.session_state.pos_a, "🏇")
 lane_b = draw_lane(st.session_state.pos_b, "🏇")
