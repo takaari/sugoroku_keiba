@@ -2,7 +2,7 @@ import streamlit as st
 import random
 
 #st.write("🔥 更新テスト 2026-01-03 22:15")
-st.set_page_config(page_title="🏇 Dice Derby", layout="wide")
+st.set_page_config(page_title="🏇 Dice de Derby", layout="wide")
 
 st.markdown("""
 <style>
@@ -60,7 +60,7 @@ if "finished" not in st.session_state:
     st.session_state.finished = False
 
 st.markdown(
-    '<div class="title">🏇 Dice Derby</div>',
+    '<div class="title">🏇 Dice de Derby</div>',
     unsafe_allow_html=True
 )
 
