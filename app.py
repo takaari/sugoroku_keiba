@@ -60,8 +60,16 @@ def draw_lane(pos, icon):
     lane[pos] = icon
     return "".join(lane) + " 🏁"
 
-st.text(draw_lane(st.session_state.pos_a, "🏇"))
-st.text(draw_lane(st.session_state.pos_b, "🏇"))
+lane_a = draw_lane(st.session_state.pos_a, "🏇")
+lane_b = draw_lane(st.session_state.pos_b, "🏇")
+
+st.markdown(f"""
+<div class="course">
+  <div class="lane">{lane_a} 🏁</div>
+  <div class="lane">{lane_b} 🏁</div>
+</div>
+""", unsafe_allow_html=True)
+
 
 
 # -------------------------
