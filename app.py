@@ -32,9 +32,17 @@ st.markdown("""
     margin-top: 6px;
     padding-top: 6px;
 }
+
+background: repeating-linear-gradient(
+  45deg,
+  #2e7d32,
+  #2e7d32 10px,
+  #1b5e20 10px,
+  #1b5e20 20px
+);
 </style>
 """, unsafe_allow_html=True)
-BOARD_SIZE = 40
+BOARD_SIZE = 30
 
 # -------------------------
 # 初期化
@@ -87,7 +95,7 @@ if st.session_state.finished:
 # サイコロ
 # -------------------------
 dice = [1, 2, 3, 4, 5, 6]
-BOARD_SIZE = 40
+BOARD_SIZE = 30
 
 if not st.session_state.finished:
     if st.button("🎲 サイコロを振る（同時）"):
