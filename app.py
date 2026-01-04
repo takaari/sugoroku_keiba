@@ -2,6 +2,36 @@ import streamlit as st
 import random
 
 st.write("🔥 更新テスト 2026-01-03 22:15")
+st.markdown("""
+<style>
+/* コース全体 */
+.course {
+    background: linear-gradient(
+        to bottom,
+        #2e7d32,
+        #1b5e20
+    );
+    padding: 12px 16px;
+    border-radius: 12px;
+    margin-bottom: 16px;
+}
+
+/* 各レーン */
+.lane {
+    font-size: 22px;
+    line-height: 1.8;
+    color: white;
+    white-space: pre;
+}
+
+/* レーン区切り線 */
+.lane + .lane {
+    border-top: 2px dashed rgba(255,255,255,0.6);
+    margin-top: 6px;
+    padding-top: 6px;
+}
+</style>
+""", unsafe_allow_html=True)
 
 st.set_page_config(page_title="🏇 すごろく競馬", layout="wide")
 
