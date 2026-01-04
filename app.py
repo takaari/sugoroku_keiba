@@ -5,7 +5,7 @@ st.write("🔥 更新テスト 2026-01-03 22:15")
 
 st.set_page_config(page_title="🏇 すごろく競馬", layout="wide")
 
-BOARD_SIZE = 20
+BOARD_SIZE = 40
 
 # -------------------------
 # 初期化
@@ -50,7 +50,7 @@ if st.session_state.finished:
 # サイコロ
 # -------------------------
 dice = [1, 2, 3, 4, 5, 6]
-BOARD_SIZE = 20
+BOARD_SIZE = 40
 
 if not st.session_state.finished:
     if st.button("🎲 サイコロを振る（同時）"):
