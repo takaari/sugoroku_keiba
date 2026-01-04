@@ -26,42 +26,55 @@ st.title("🏇 すごろく競馬")
 # -------------------------
 # 盤面描画
 # -------------------------
-def draw_lane(pos, label):
+def draw_lane(pos, icon):
     lane = ["□"] * (BOARD_SIZE + 1)
-    lane[pos] = "🏇"
-    return f"{label} " + "".join(lane) + " 🏁"
+    lane[pos] = icon
+    return "".join(lane)
 
-st.markdown("### レース状況")
-st.markdown(draw_lane(st.session_state.pos_a, "A"))
-st.markdown(draw_lane(st.session_state.pos_b, "B"))
+st.text(draw_lane(st.session_state.pos_a, "🏇"))
+st.text(draw_lane(st.session_state.pos_b, "🏇"))
+
 
 # -------------------------
 # 勝敗判定
 # -------------------------
-if st.session_state.pos_a >= BOARD_SIZE:
-    st.success("🏆 プレイヤーA 勝利！")
-    st.session_state.finished = True
-
-if st.session_state.pos_b >= BOARD_SIZE:
-    st.success("🏆 プレイヤーB 勝利！")
-    st.session_state.finished = True
+if st.session_state.finished:
+    if st.session_state.pos_a >= BOARD_SIZE and st.session_state.pos_b >= BOARD_SIZE:
+        st.info("🤝 同着！引き分け！")
+    elif st.session_state.pos_a >= BOARD_SIZE:
+        st.success("🏆 Aの勝ち！")
+    else:
+        st.success("🏆 Bの勝ち！")
 
 # -------------------------
 # サイコロ
 # -------------------------
+dice = [1, 2, 3, 4, 5, 6]
+BOARD_SIZE = 20
+
 if not st.session_state.finished:
-    if st.button("🎲 サイコロを振る"):
-        roll = random.randint(1, 6)
+    if st.button("🎲 サイコロを振る（同時）"):
+        roll_a = random.choice(dice)
+        roll_b = random.choice(dice)
 
-        if st.session_state.turn == "A":
-            st.session_state.pos_a = min(
-                st.session_state.pos_a + roll, BOARD_SIZE
-            )
-            st.session_state.turn = "B"
-        else:
-            st.session_state.pos_b = min(
-                st.session_state.pos_b + roll, BOARD_SIZE
-            )
-            st.session_state.turn = "A"
+        st.session_state.pos_a += roll_a
+        st.session_state.pos_b += roll_b
 
-        st.info(f"出目：{roll}")
+        st.session_state.pos_a = min(st.session_state.pos_a, BOARD_SIZE)
+        st.session_state.pos_b = min(st.session_state.pos_b, BOARD_SIZE)
+
+        st.session_state.last_roll = (roll_a, roll_b)
+
+        # ゴール判定
+        if (
+            st.session_state.pos_a >= BOARD_SIZE
+            or st.session_state.pos_b >= BOARD_SIZE
+        ):
+            st.session_state.finished = True
+
+        st.rerun()
+
+if "last_roll" in st.session_state:
+    a, b = st.session_state.last_roll
+    st.write(f"🏇 A：{a}　｜　🏇 B：{b}")
+
