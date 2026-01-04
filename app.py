@@ -6,7 +6,7 @@ st.markdown(
     '<div class="title">🏇 Dice Derby</div>',
     unsafe_allow_html=True
 )
-# st.#st.#st.set_page_config(page_title="🏇 すごろく競馬", layout
+
 st.markdown("""
 <style>
 .title {
