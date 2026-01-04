@@ -2,10 +2,23 @@ import streamlit as st
 import random
 
 st.write("🔥 更新テスト 2026-01-03 22:15")
-
-st.set_page_config(page_title="🏇 すごろく競馬", layout="wide")
+st.markdown(
+    '<div class="title">🏇 Dice Derby</div>',
+    unsafe_allow_html=True
+)
+# st.#st.#st.set_page_config(page_title="🏇 すごろく競馬", layout
 st.markdown("""
 <style>
+.title {
+    font-style: italic;
+    font-size: 48px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
 .course {
     background: repeating-linear-gradient(
         45deg,
