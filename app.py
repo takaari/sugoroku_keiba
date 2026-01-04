@@ -1,7 +1,7 @@
 import streamlit as st
 import random
 
-st.write("🔥 更新テスト 2026-01-03 22:15")
+#st.write("🔥 更新テスト 2026-01-03 22:15")
 st.set_page_config(page_title="🏇 Dice Derby", layout="wide")
 
 st.markdown("""
