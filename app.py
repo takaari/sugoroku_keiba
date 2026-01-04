@@ -2,6 +2,8 @@ import streamlit as st
 import random
 
 st.write("🔥 更新テスト 2026-01-03 22:15")
+
+st.set_page_config(page_title="🏇 すごろく競馬", layout="wide")
 st.markdown("""
 <style>
 /* コース全体 */
@@ -32,9 +34,6 @@ st.markdown("""
 }
 </style>
 """, unsafe_allow_html=True)
-
-st.set_page_config(page_title="🏇 すごろく競馬", layout="wide")
-
 BOARD_SIZE = 40
 
 # -------------------------
