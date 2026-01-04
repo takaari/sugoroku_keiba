@@ -60,7 +60,7 @@ if "finished" not in st.session_state:
     st.session_state.finished = False
 
 st.markdown(
-    '<div class="title">🏇 Dice Derby</div>',
+    '<div class="title">🏇Dice Derby</div>',
     unsafe_allow_html=True
 )
 
